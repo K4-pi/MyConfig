@@ -2,10 +2,10 @@ local o = vim.o
 local opt = vim.opt
 
 o.expandtab = true
-o.shiftwidth = 4
+o.shiftwidth = 2
 o.smartindent = true
-o.tabstop = 4
-o.softtabstop = 4
+o.tabstop = 2
+o.softtabstop = 2
 o.number = true
 o.mouse = 'a'
 
@@ -46,36 +46,15 @@ require("lazy").setup({
     config = true
   },
   {'akinsho/toggleterm.nvim', version = "*", config = true},
-  {'nvim-telescope/telescope.nvim', tag = '0.1.8',}
-})
-  
--- Colorscheme setup
-require('kanagawa').setup({
-    compile = false,             -- enable compiling the colorscheme
-    undercurl = true,            -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true},
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false,         -- do not set background color
-    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    colors = {                   -- add/modify theme and palette colors
-        palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    },
-    overrides = function(colors) -- add/modify highlights
-        return {}
-    end,
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
-    background = {               -- map the value of 'background' option to a theme
-        dark = "wave",           -- try "dragon" !
-        light = "lotus"
-    },
+  {'nvim-telescope/telescope.nvim', tag = '0.1.8',},
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  }
 })
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme cyberdream")
 
 -- LSP Server
 local lsp_zero = require('lsp-zero')
