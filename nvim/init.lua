@@ -9,6 +9,9 @@ o.softtabstop = 2
 o.number = true
 o.mouse = 'a'
 
+-- Turns off warnings\errors text
+-- vim.diagnostic.config({virtual_text=false})
+
 -- Allows to copy to os clipboard
 opt.clipboard = "unnamedplus"
 
